@@ -20,7 +20,7 @@ def flat(array):
     y_naut = 1.001
     array = ((np.exp((array ** y_naut) / 255.0) - 1) / (np.e - 1) * 255).astype(np.int32)
     array[array > 255] = 255
-    return array[0] * 16 * 16 * 16 * 16 + array[1] * 16 * 16 + array[2]
+    return array[0] * 16**4 + array[1] * 16**2 + array[2]
 
 def dec2hex(whatever):
     # print(whatever)
